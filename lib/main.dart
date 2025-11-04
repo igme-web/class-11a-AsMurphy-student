@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'page_home.dart';
+import 'page_search.dart';
+import 'page_settings.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -9,9 +13,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Demo11a(),
-    );
+    return const MaterialApp(home: Demo11a());
   }
 }
 
@@ -25,13 +27,22 @@ class Demo11a extends StatefulWidget {
 class _Demo11aState extends State<Demo11a> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar:AppBar(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
           title: Text("Week 11B Demo"),
+          backgroundColor: Colors.amber[700],
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.home), text: "Home"),
+              Tab(icon: Icon(Icons.search), text: "Search"),
+              Tab(icon: Icon(Icons.settings), text: "Settings"),
+            ],
+          ),
         ),
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: TabBarView(children: [PageHome(), PageSearch(), PageSettings()]),
+      ),
     );
   }
 }
