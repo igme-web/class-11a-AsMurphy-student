@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/demo_11a_bottonnav.dart';
 
 import 'page_home.dart';
 import 'page_search.dart';
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Demo11a());
+    return const MaterialApp(home: Demo11aBottomNav());
   }
 }
 
